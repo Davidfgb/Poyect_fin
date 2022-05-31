@@ -65,10 +65,10 @@ class Registrase : AppCompatActivity() {
                                         "telefono" to phone.text.toString(),
 
                                         )
-                                    db.collection("usuario")
-                                        .add(usuario).addOnSuccessListener { documentReference ->
-                                            Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-                                        }
+                                    db.collection("usuario").document(nombre.text.toString())
+                                        .set(usuario)
+                                        .addOnSuccessListener { Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!") }
+                                        .addOnFailureListener { e -> Log.w(ContentValues.TAG, "Error writing document", e) }
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(ContentValues.TAG, "signInWithCustomToken:failure", task.exception)
@@ -77,14 +77,14 @@ class Registrase : AppCompatActivity() {
                                 }
                             }
                     } else {
-                        throw  Exception("Las contraseñas no coinciden")
+                        Toast.makeText(baseContext, "Las contrsasñas no coiciden", Toast.LENGTH_SHORT).show()
                     }
 
                 }
             }
             catch (e:Exception){
 
-                Toast.makeText(this,e.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Los campos estan vacios", Toast.LENGTH_SHORT).show()
 
             }
         }
