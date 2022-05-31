@@ -32,6 +32,7 @@ class menu_principal : AppCompatActivity() {
         val precios= arrayListOf<Int>()
         var valor_pedido = 0
         var i = 0
+        var usuario =""
        // val nombre : Usuario = Usuario()
 
 
