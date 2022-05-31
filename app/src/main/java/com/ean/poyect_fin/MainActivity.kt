@@ -52,8 +52,8 @@ class MainActivity : AppCompatActivity() {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(ContentValues.TAG, "signInWithCustomToken:success")
                                 //updateUI(user)
-                                //val intent = Intent(this, Menu_principal::class.java)
-                                //startActivity(intent)
+                                val intent = Intent(this, menu_principal::class.java)
+                                startActivity(intent)
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(ContentValues.TAG, "signInWithCustomToken:failure", task.exception)

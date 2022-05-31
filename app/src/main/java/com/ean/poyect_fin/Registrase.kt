@@ -1,5 +1,6 @@
 package com.ean.poyect_fin
 
+import Mundo.Usuario
 import Mundo.paswords_iguales
 import android.content.ContentValues
 import android.content.Intent
@@ -40,6 +41,8 @@ class Registrase : AppCompatActivity() {
         val boton_registrar= findViewById<Button>(R.id.bn_regitrar_rg)
         val addres= findViewById<EditText>(R.id.editText_direccion_rg)
         val phone= findViewById<EditText>(R.id.editText_telefono_rg)
+        val usuario:Usuario= Usuario()
+       // usuario.nombre = nombre.toString()
 
         boton_registrar.setOnClickListener{
             try {

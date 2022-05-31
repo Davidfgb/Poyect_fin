@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Poyect_fin">
         <activity
+            android:name=".menu_principal"
+            android:exported="false" />
+        <activity
             android:name=".Registrase"
             android:exported="false" />
         <activity
